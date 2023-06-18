@@ -98,7 +98,7 @@ int http_conn::m_user_count = 0;
 int http_conn::m_epollfd = -1;
 
 //关闭连接，关闭一个连接，客户总量减一
-void http_conn::close_conn(bool real_close)
+void http_conn::close_conn(bool real_close) 
 {
     if (real_close && (m_sockfd != -1))
     {

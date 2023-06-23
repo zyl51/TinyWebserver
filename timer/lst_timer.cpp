@@ -192,6 +192,7 @@ void Utils::addsig(int sig, void(handler)(int), bool restart)
     struct sigaction sa;
     memset(&sa, '\0', sizeof(sa));
     sa.sa_handler = handler;
+    // SA_RESTART重新启用被信号中断的系统
     if (restart)
         sa.sa_flags |= SA_RESTART;
     sigfillset(&sa.sa_mask);
@@ -215,6 +216,7 @@ int *Utils::u_pipefd = 0;
 int Utils::u_epollfd = 0;
 
 class Utils;
+// 从 epoll 中删除这这个文件描述符user_data->sockfd
 void cb_func(client_data *user_data)
 {
     epoll_ctl(Utils::u_epollfd, EPOLL_CTL_DEL, user_data->sockfd, 0);

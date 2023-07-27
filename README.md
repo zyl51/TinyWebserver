@@ -9,7 +9,6 @@ Linux下C++轻量级Web服务器，助力初学者快速实践网络编程，搭
 * 经Webbench压力测试可以实现**上万的并发连接**数据交换
 
 [框架](#框架)<br>
-[Demo演示](#Demo演示)<br>
 [压力测试](#压力测试)<br>
 [更新日志](#更新日志)<br>
 [快速运行](#快速运行)<br>
@@ -23,24 +22,6 @@ Linux下C++轻量级Web服务器，助力初学者快速实践网络编程，搭
 框架
 -------------
 <div align=center><img src="http://ww1.sinaimg.cn/large/005TJ2c7ly1ge0j1atq5hj30g60lm0w4.jpg" height="765"/> </div>
-
-Demo演示
-----------
-> * 注册演示
-
-<div align=center><img src="http://ww1.sinaimg.cn/large/005TJ2c7ly1ge0iz0dkleg30m80bxjyj.gif" height="429"/> </div>
-
-> * 登录演示
-
-<div align=center><img src="https://github.com/qinguoyi/TinyWebServer/blob/master/root/login.gif" height="429"/> </div>
-
-> * 请求图片文件演示(6M)
-
-<div align=center><img src="http://ww1.sinaimg.cn/large/005TJ2c7ly1ge0juxrnlfg30go07x4qr.gif" height="429"/> </div>
-
-> * 请求视频文件演示(39M)
-
-<div align=center><img src="http://ww1.sinaimg.cn/large/005TJ2c7ly1ge0jtxie8ng30go07xb2b.gif" height="429"/> </div>
 
 
 压力测试

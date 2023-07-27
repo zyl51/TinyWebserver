@@ -10,7 +10,6 @@ Linux下C++轻量级Web服务器，助力初学者快速实践网络编程，搭
 
 [框架](#框架)<br>
 [压力测试](#压力测试)<br>
-[更新日志](#更新日志)<br>
 [快速运行](#快速运行)<br>
 [个性化运行](#个性化运行)<br>
 [测试示例命令与含义](测试示例命令与含义)<br>
@@ -54,22 +53,7 @@ Linux下C++轻量级Web服务器，助力初学者快速实践网络编程，搭
 
 **注意：** 使用本项目的webbench进行压测时，若报错显示webbench命令找不到，将可执行文件webbench删除后，重新编译即可。
 
-更新日志
--------
-- [x] 解决请求服务器上大文件的Bug
-- [x] 增加请求视频文件的页面
-- [x] 解决数据库同步校验内存泄漏
-- [x] 实现非阻塞模式下的ET和LT触发，并完成压力测试
-- [x] 完善`lock.h`中的封装类，统一使用该同步机制
-- [x] 改进代码结构，更新局部变量懒汉单例模式
-- [x] 优化数据库连接池信号量与代码结构
-- [x] 使用RAII机制优化数据库连接的获取与释放
-- [x] 优化代码结构，封装工具类以减少全局变量
-- [x] 编译一次即可，命令行进行个性化测试更加友好
-- [x] main函数封装重构
-- [x] 新增命令行日志开关，关闭日志后更新压力测试结果
-- [x] 改进编译方式，只配置一次SQL信息即可
-- [x] 新增Reactor模式，并完成压力测试
+
 
 快速运行
 ------------
@@ -185,11 +169,3 @@ Linux下C++轻量级Web服务器，助力初学者快速实践网络编程，搭
 * [最新版Web服务器项目详解 - 12 注册登录](https://mp.weixin.qq.com/s?__biz=MzAxNzU2MzcwMw==&mid=2649274431&idx=4&sn=7595a70f06a79cb7abaebcd939e0cbee&chksm=83ffb167b4883871ce110aeb23e04acf835ef41016517247263a2c3ab6f8e615607858127ea6&token=1686112912&lang=zh_CN#rd)
 * [最新版Web服务器项目详解 - 13 踩坑与面试题](https://mp.weixin.qq.com/s?__biz=MzAxNzU2MzcwMw==&mid=2649274431&idx=1&sn=2dd28c92f5d9704a57c001a3d2630b69&chksm=83ffb167b48838715810b27b8f8b9a576023ee5c08a8e5d91df5baf396732de51268d1bf2a4e&token=1686112912&lang=zh_CN#rd)
 * 已更新完毕
-
-Star History
----------
-[![Star History Chart](https://api.star-history.com/svg?repos=qinguoyi/TinyWebServer&type=Date)](https://star-history.com/#qinguoyi/TinyWebServer&Date)
-
-CPP11实现
-------------
-更简洁，更优雅的CPP11实现：[Webserver](https://github.com/markparticle/WebServer)

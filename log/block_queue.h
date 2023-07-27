@@ -54,7 +54,6 @@ public:
         m_mutex.lock();
         if (m_size >= m_max_size)
         {
-
             m_mutex.unlock();
             return true;
         }
@@ -159,9 +158,9 @@ public:
                 return false;
             }
         }
-
-        m_front = (m_front + 1) % m_max_size;
+        
         item = m_array[m_front];
+        m_front = (m_front + 1) % m_max_size;
         m_size--;
         m_mutex.unlock();
         return true;

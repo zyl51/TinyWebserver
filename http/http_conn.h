@@ -102,7 +102,7 @@ public:
 public:
     // 用于初始化新的连接，
     void init(int sockfd, const sockaddr_in &addr, char *root, int TRIGMode,
-                     int close_log, string user, string passwd, string sqlname);
+        int close_log, string user, string passwd, string sqlname);
     void close_conn(bool real_close = true);
     void process();
     bool read_once();

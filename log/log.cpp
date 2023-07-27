@@ -100,7 +100,6 @@ void Log::write_log(int level, const char *format, ...)
 
     if (m_today != my_tm.tm_mday || m_count % m_split_lines == 0) //everyday log
     {
-        
         char new_log[256] = {0};
         fflush(m_fp);
         fclose(m_fp);

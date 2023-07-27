@@ -116,7 +116,7 @@ void http_conn::init(int sockfd, const sockaddr_in &addr, char *root, int TRIGMo
     m_sockfd = sockfd;
     m_address = addr;
 
-    addfd(m_epollfd, sockfd, true, m_TRIGMode);
+    addfd(m_epollfd, sockfd, true, TRIGMode);
     m_user_count++;
 
     //当浏览器出现连接重置时，可能是网站根目录出错或http响应格式出错或者访问的文件中内容完全为空
@@ -224,6 +224,7 @@ bool http_conn::read_once()
             bytes_read = recv(m_sockfd, m_read_buf + m_read_idx, READ_BUFFER_SIZE - m_read_idx, 0);
             if (bytes_read == -1)
             {
+                /**/
                 if (errno == EAGAIN || errno == EWOULDBLOCK)
                     break;
                 return false;
@@ -268,6 +269,7 @@ http_conn::HTTP_CODE http_conn::parse_request_line(char *text)
     if (strncasecmp(m_url, "http://", 7) == 0)
     {
         m_url += 7;
+        // 用于在字符串中搜索指定字符的第一个匹配位置
         m_url = strchr(m_url, '/');
     }
 
@@ -389,7 +391,8 @@ http_conn::HTTP_CODE http_conn::do_request()
 {
     strcpy(m_real_file, doc_root);
     int len = strlen(doc_root);
-    //printf("m_url:%s\n", m_url);
+    // printf("m_url:%s\n", m_url);
+    // printf("m_real_file:%s\n", m_real_file);
     const char *p = strrchr(m_url, '/');
 
     //处理cgi
@@ -406,7 +409,7 @@ http_conn::HTTP_CODE http_conn::do_request()
         free(m_url_real);
 
         //将用户名和密码提取出来
-        //user=123&passwd=123
+        //user=123&password=123
         char name[100], password[100];
         int i;
         for (i = 5; m_string[i] != '&'; ++i)
@@ -534,6 +537,7 @@ bool http_conn::write()
 
     while (1)
     {
+        // 将多个非连续的缓冲区中的数据一次性写入到文件描述符中
         temp = writev(m_sockfd, m_iv, m_iv_count);
 
         if (temp < 0)
@@ -578,6 +582,7 @@ bool http_conn::write()
         }
     }
 }
+
 bool http_conn::add_response(const char *format, ...)
 {
     if (m_write_idx >= WRITE_BUFFER_SIZE)

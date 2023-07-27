@@ -12,7 +12,7 @@
 #include "../log/log.h"
 
 using namespace std;
-
+	
 class connection_pool
 {
 public:

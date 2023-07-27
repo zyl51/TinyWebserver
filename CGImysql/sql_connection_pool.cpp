@@ -39,7 +39,7 @@ void connection_pool::init(string url, string User, string PassWord, string DBNa
 
 		if (con == NULL)
 		{
-			LOG_ERROR("MySQL Error");
+			LOG_ERROR("MySQL Error mysql_init");
 			exit(1);
 		}
 
@@ -48,7 +48,7 @@ void connection_pool::init(string url, string User, string PassWord, string DBNa
 
 		if (con == NULL)
 		{
-			LOG_ERROR("MySQL Error");
+			LOG_ERROR("MySQL Error mysql_real_connect");
 			exit(1);
 		}
 		connList.push_back(con);
